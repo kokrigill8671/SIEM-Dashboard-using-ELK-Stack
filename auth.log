@@ -1,0 +1,3 @@
+Jul 16 10:15:22 ubuntu sshd: Accepted password for root from 192.168.1.100
+Jul 16 10:16:30 ubuntu sshd: Failed password for admin from 192.168.1.105
+Jul 16 10:18:45 ubuntu sudo: user1 executed apt update

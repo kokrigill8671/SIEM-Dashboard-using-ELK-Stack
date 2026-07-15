@@ -1,0 +1,26 @@
+input {
+  file {
+    path => "/usr/share/logstash/sample_logs/auth.log"
+    start_position => "beginning"
+    sincedb_path => "/dev/null"
+  }
+}
+
+filter {
+  grok {
+    match => {
+      "message" => "%{GREEDYDATA:log}"
+    }
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["http://elasticsearch:9200"]
+    index => "linux-auth"
+  }
+
+  stdout {
+    codec => rubydebug
+  }
+}
